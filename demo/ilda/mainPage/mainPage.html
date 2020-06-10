@@ -1,0 +1,277 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        mainPage
+    </title>
+    <style>
+        body {
+            font-family: Arial, Verdana,  sans-serif; /* Семейство шрифтов */
+            font-size: 11pt; /* Размер основного шрифта в пунктах  */
+            background-color: aliceblue; /* Цвет фона веб-страницы */
+            color: #333; /* Цвет основного текста */
+            font-style: italic;
+        }
+
+        table td {
+            font-weight: normal;
+            padding: 20px;
+            height: 30px;
+            width: 50px;
+            border: 1px solid black;
+        }
+        table {
+            border: 1px solid black;
+        }
+        
+        .findWork{
+            font-weight: normal;
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            width: 300px;
+            top: 80px;
+            right: 80px;
+        }
+        .findMaster{
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            width: 300px;
+            top: 80px;
+            right:380px;
+        }
+        .findCar{
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            width: 300px;
+            top: 80px;
+            right: 680px;
+        }
+        .findService{
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            width: 300px;
+            top: 80px;
+            right: 980px;
+        }
+
+        .deleteWork{
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            width: 330px;
+            top: 150px;
+            right: 80px;
+        }
+        .deleteMaster{
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            width: 330px;
+            top: 190px;
+            right:80px;
+        }
+        .deleteCar{
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            width: 330px;
+            top: 230px;
+            right: 80px;
+        }
+        .deleteService{
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            width: 330px;
+            top: 270px;
+            right: 80px;
+        }
+
+        .showWorks {
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            top: 150px;
+            left: 250px;
+        }
+        .showMasters {
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            top: 190px;
+            left: 250px;
+        }
+        .showCars {
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            top: 230px;
+            left: 250px;
+        }
+        .showServices {
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue; /* Цвет фона */
+            height: 25px; /* Высота блока */
+            top: 270px;
+            left: 250px;
+        }
+        .myTable {
+            position: absolute; /* Относительное позиционирование */
+            background: aliceblue;
+            height: 300px; /* Высота блока */
+            top: 110px;
+            left: 500px;
+
+        }
+        .addingForm {
+            position: absolute;
+            top: 300px;
+            left: 250px
+        }
+        .addSomething {
+            position: absolute;
+            top: 400px;
+            left: 250px;
+            width: 50px;
+        }
+        .addWorkButton {
+            position: absolute;
+            top: 350px;
+            right: 190px;
+        }
+        .addWork {
+            position: absolute;
+            top: 400px;
+            right: 250px;
+            width: 70px;
+        }
+        .editingForm {
+            position: absolute;
+            top: 80px;
+            left: 20px;
+        }
+        .editSomething {
+            position: absolute;
+            top: 160px;
+            width: 70px;
+            left: 20px;
+        }
+    </style>
+</head>
+
+
+
+<body bgcolor="#f0f8ff" onload="checkRules()">
+
+    <div class="myTable" id="elem">
+    </div>
+
+    <div class = "addSomething" id = "addSome">
+    </div>
+
+    <div class="findMaster" id = "classFindMaster" hidden>
+    <label for="findMaster">
+        <b>find Master</b></label>
+    <input id="findMaster" type="text"  placeholder="Enter Master id" username="Master id" required="" />
+    <button id="btnFM" type="button" onclick="getMasterById(document.querySelector('#elem'))" >find</button>
+
+    </div>
+    <div class="findCar" id = "classFindCar" hidden>
+        <label for="findCar">
+            <b>find Car</b></label>
+        <input id="findCar" type="text"  placeholder="Enter Car id" username="Car id" required="" />
+        <button id="btnFC" type="button" onclick="getCarById(document.querySelector('#elem'))">find</button>
+    </div>
+    <div class="findService" id = "classFindService" hidden >
+        <label for="findService">
+            <b>find Service</b></label>
+        <input id="findService" type="text"  placeholder="Enter Service id" username="Service id" required="" />
+        <button id="btnFS" type="button" onclick="getServiceById(document.querySelector('#elem'))">find</button>
+    </div>
+
+    <div class="findWork" id = "classFindWork" hidden>
+        <label for="findWork">
+            <b>find Work</b></label>
+        <input id="findWork" type="text"  placeholder="Enter Work id" username="Work id" required="" />
+        <button id="btnFW" type="button" onclick="getWorkById(document.querySelector('#elem'))">find</button>
+    </div>
+
+    <div class="showMasters" id = "classShowMasters" hidden >
+        <button id="btnSM" type="button" onclick="createTableShowMasters(document.querySelector('#elem'))">Show All Masters</button>
+    </div>
+    <div class="showCars" id = "classShowCars" hidden>
+        <button id="btnSC" type="button" onclick="createTableShowCars(document.querySelector('#elem'))">Show All Cars</button>
+    </div>
+    <div class="showServices" id = "classShowServices" hidden >
+        <button id="btnSS" type="button" onclick="createTableShowServices(document.querySelector('#elem'))">Show All Service</button>
+    </div>
+
+    <div class="showWorks" id = "classShowWorks" hidden>
+        <button id="btnSW" type="button" onclick="createTableShowWorks(document.querySelector('#elem'))"> Show All Works
+        </button>
+    </div>
+
+    <div class="deleteMaster" hidden id = "classDeleteMaster">
+        <label for="deleteMaster">
+            <b>delete Master</b></label>
+        <input id="deleteMaster" type="text"  placeholder="Enter Master id" username="Master id" required="" />
+        <button id="btnDM" type="button" onclick="deleteMasterById(document.querySelector('#elem'))" >delete</button>
+    </div>
+
+    <div class="deleteCar" hidden id = "classDeleteCar">
+        <label for="deleteCar">
+            <b>delete Car</b></label>
+        <input id="deleteCar" type="text"  placeholder="Enter Car id" username="Car id" required="" />
+        <button id="btnDC" type="button" onclick="deleteCarById(document.querySelector('#elem'))">delete</button>
+    </div>
+    <div class="deleteService" hidden id = "classDeleteService">
+        <label for="deleteService">
+            <b>delete Service</b></label>
+        <input id="deleteService" type="text"  placeholder="Enter Service id" username="Service id" required="" />
+        <button id="btnDS" type="button" onclick="deleteServiceById(document.querySelector('#elem'))">delete</button>
+    </div>
+
+    <div class="deleteWork" hidden id = "classDeleteWork">
+        <label for="deleteWork">
+            <b>delete Work</b></label>
+        <input id="deleteWork" type="text"  placeholder="Enter Work id" username="Work id" required="" />
+        <button id="btnDW" type="button" onclick="deleteWorkById(document.querySelector('#elem'))">delete</button>
+    </div>
+    <div class = "addingForm" hidden id = "classAddForm">
+        <p><select id = "adding" name="select" size="2" multiple>
+            <option selected value="Car">Car</option>
+            <option value="Service">Service</option>
+            <option value="Master">Master</option>
+        </select>
+            <input type="submit" value="Add" onclick="getInfo(document.querySelector('#addSome'))"></p>
+    </div>
+
+    <div class = "addWork" id = "addingWork"n>
+    </div>
+
+    <div class = "addWorkButton" id = "addingWorkButton" hidden >
+        <button id = "addWork" type="button" onclick="createAddWork(document.querySelector('#addingWork'))"> Click to show form for adding work </button>
+    </div>
+
+    <div class = "editSomething" id = "editSome">
+    </div>
+
+    <div class = "editingForm" hidden id = "classEditing">
+        <p><select id = "editing" name="select" size="2" multiple >
+            <option selected value="Car">Car</option>
+            <option value="Service">Service</option>
+            <option value="Master">Master</option>
+            <option value="Work">Work</option>
+        </select>
+            <input type="submit" value="Edit" onclick="editInfo(document.querySelector('#editSome'))"></p>
+    </div>
+
+
+    <script src="./node.js"></script>
+</body>
+</html>
